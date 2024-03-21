@@ -11,7 +11,8 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { EditBookComponent } from "./edit-book/edit-book.component";
 import { EditReaderComponent } from "./edit-reader/edit-reader.component";
 import { BookTrackerErrorHandlerService } from "./core/book-tracker-error-handler.service";
-import { AddHeaderInterceptor } from "./core/add-header.interceptor";
+import { AddHeaderInterceptorService } from "./core/add-header-interceptor.service";
+import { LogResponseInterceptorService } from "./core/log-response-interceptor.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,16 @@ import { AddHeaderInterceptor } from "./core/add-header.interceptor";
   ],
   providers: [
     { provide: ErrorHandler, useClass: BookTrackerErrorHandlerService },
-    { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AddHeaderInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LogResponseInterceptorService,
+      multi: true,
+    },
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   bootstrap: [AppComponent],
