@@ -1,20 +1,14 @@
 [
     {
-        "bookID": 2,
-        "title": "Winnie-the-Pooh",
-        "author": "A. A. Milne",
-        "publicationYear": "1926"
-    },
-    {
-        "bookID": 3,
-        "title": "asd",
-        "author": "asd",
-        "publicationYear": "1999"
-    },
-    {
         "bookID": 4,
         "title": "sfasf",
         "author": "asfasf",
         "publicationYear": "1956"
+    },
+    {
+        "bookID": 5,
+        "title": "asdfasdf",
+        "author": "asdfasdf",
+        "publicationYear": "2000"
     }
 ]
